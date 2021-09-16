@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testPage</title>
+
+    <style>
+
+        body{
+            background-color: rgb(211, 211, 211);
+        }
+
+        .wrapper{
+            display: flex;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            margin: 0 10px;
+        }
+
+        .greens-wrapper{
+            display: flex;
+        }
+
+        .green{
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgb(102, 194, 93);
+            margin: 15px;
+        }
+
+        .reds-wrapper{
+            display: flex;
+        }
+
+        .red{
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgb(204, 71, 71);
+            margin: 50px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <div class="box">1</div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+    </div>
+
+    <div class="greens-wrapper">
+        
+        <div class="green">10</div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+
+    </div>
+
+    <div class="reds-wrapper">
+        
+        <div class="red">100</div>
+        <div class="red"></div>
+
+    </div>
+
+    <h1 id='click-time'></h1>
+
+
+
+    <script>
+
+        let number = 0;
+        showNumber = document.getElementById('click-time');
+        showNumber.innerHTML = number;
+
+
+
+        // 按鈕點擊新增數字事件
+        let oBtn = document.getElementsByClassName('box');
+        for(let i=0; i<oBtn.length; i++){
+            oBtn[i].addEventListener('click', function(evt){
+                number+=1;
+                showNumber.innerHTML = number;
+
+                evt.stopPropagation();
+            })
+        }
+
+        let greens = document.getElementsByClassName('green');
+        for(let i=0; i<greens.length; i++){
+            greens[i].addEventListener('click', function(evt){
+                number+=10;
+                // console.log(number);
+                showNumber.innerHTML = number;
+                evt.stopPropagation();
+            })
+        }
+
+        let reds = document.getElementsByClassName('red');
+        for(let i=0; i<reds.length; i++){
+            reds[i].addEventListener('click', function(evt){
+                number+=100;
+                // console.log(number);
+                showNumber.innerHTML = number;
+                evt.stopPropagation();
+            })
+        }
+
+        
+    </script>
+</body>
+</html>

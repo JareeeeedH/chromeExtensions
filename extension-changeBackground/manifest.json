@@ -1,0 +1,22 @@
+{
+  "name": "國防布",
+  "description": "切換背景模式",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/32.png",
+      "32": "/images/32.png",
+      "48": "/images/32.png",
+      "128": "/images/32.png"
+    }
+  },
+  "icons": {
+    "16": "/images/32.png",
+    "32": "/images/32.png",
+    "48": "/images/32.png",
+    "128": "/images/32.png"
+  }
+}

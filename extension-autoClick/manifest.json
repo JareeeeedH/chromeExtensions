@@ -1,0 +1,27 @@
+{
+  "name": "Clicking Up點起來",
+  "description": "自動點擊",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["scripting","activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "set Auto Click"
+  },
+  "icons": {
+    "16": "32.png",
+    "32": "32.png",
+    "48": "32.png",
+    "128": "32.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ]
+}
