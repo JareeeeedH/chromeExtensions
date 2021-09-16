@@ -1,0 +1,27 @@
+### 實作：Chrome Extension
+#### 參考(也可以自己多找找喔)：
+- https://pastleo.me/post/20200731-chromext-apis-word-cards
+- https://tw.alphacamp.co/blog/how-to-make-a-chrome-extension
+- https://angela52799.medium.com/chrome-extension-%E9%96%8B%E7%99%BC%E7%AD%86%E8%A8%98-873a1cc63166
+
+#### 需求內容 (至少選擇5項，也可以另外討論)
+- 設置 Cookie、Header
+- 自動連點工具 (e.g. 可以自動觸發滑鼠點擊、設定頻率等)
+- 切換 日/夜間 模式
+- 產生目前網址 QRCode
+- 本地密碼管理工具
+- 快速填寫體溫量測表工具
+- 待辦事項工具
+- 破解右鍵鎖工具
+- 自動重整(F5) 工具 (可設定多久重整, 並且有開關可以隨時停、啟用)
+- 改變滑鼠游標工具
+- 截圖工具
+- Google行事曆
+
+#### 繳交方式
+- 每天commit上傳至gitea個人專案
+- 另約時間demo成果
+
+
+https://pastleo.me/post/20200731-chromext-apis-word-cards
+https://tw.alphacamp.co/blog/how-to-make-a-chrome-extension

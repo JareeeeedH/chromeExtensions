@@ -1,0 +1,28 @@
+{
+    "name": "QrCode",
+    "description": "get QR Code for your website",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "32.png",
+        "32": "32.png",
+        "48": "32.png",
+        "128": "32.png"
+      }
+    }, 
+    "icons": {
+        "16": "32.png",
+        "32": "32.png",
+        "48": "32.png",
+        "128": "32.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content-script.js"]
+        }
+      ],
+    "permissions": ["tabs","activeTab","scripting"]
+}
