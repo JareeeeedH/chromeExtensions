@@ -152,6 +152,7 @@ function checkAlarms(){
 let ringBtn = document.getElementById("ring");
 ringBtn.addEventListener('click',ringTest);
 function ringTest(){
+  
   chrome.notifications.create('ring起來', {
     type: 'basic',
     iconUrl: 'timg.jpg',
@@ -164,5 +165,41 @@ function ringTest(){
    chrome.notifications.clear('ring起來', function(item){
     console.log('Clear', item)
   });
+
+
+  // 彈出天氣通知
+  let key = '1dfea560d8fed397118e5ca364205374';
+  let cityName = 'Taichung'
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`;
+
+  fetch(url).then(function(response) {
+
+    let mydata = response.json();
+    mydata.then((item)=>{
+
+          let location = item.name;
+          let desc = item.weather[0].description;
+          let humidity = item.main.humidity;
+          let temp =(item.main.temp)-273.15;
+          let C = temp.toFixed(2);
+          let weatherMeg = `溫度${C} | 濕度:${humidity}`
+
+          // 發送通知與清除
+          chrome.notifications.create('weatherRing', {
+            type: 'basic',
+            iconUrl: 'timg.jpg',
+            title: `台中天氣${desc}`,
+            message: weatherMeg,
+            priority: 2
+          });
+          
+          // 清除系統通知，才可以連續彈出。
+          chrome.notifications.clear('weatherRing', function(item){
+            console.log('Clear', item)
+          });
+          
+    })
+
+  })
             
 }

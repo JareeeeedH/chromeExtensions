@@ -48,7 +48,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     // 天氣以外其他的alarm觸發，發通知與清除。
     chrome.notifications.create(alarm.name, {
       type: 'basic',
-      iconUrl: 'timg.jpg',
+      iconUrl: '16.png',
       title: alarm.name,
       message: alarm.name,
       priority: 2
